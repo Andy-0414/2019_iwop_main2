@@ -21,9 +21,11 @@ window.addEventListener('scroll',(e)=>{
         iwop__sub.className = "iwop iwop__sub iwop--disable"
     }
     if (!between(y, 0, user__maxY)) {
+        topBar.classList = "topBar topBar--attach"
         layout.style.marginTop = "70px"
     }
     else{
+        topBar.classList = "topBar topBar--detach"
         layout.style.marginTop = "0px"
     }
 })

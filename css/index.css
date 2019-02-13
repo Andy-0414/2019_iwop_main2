@@ -1,0 +1,124 @@
+/* 기본 세팅 */
+*{
+    font-family: 'NanumSquareR';
+
+    padding: 0;
+    margin: 0;
+
+    box-sizing: border-box;
+
+    font-size: 1em;
+    letter-spacing: 1px;
+}
+ul,li{
+    list-style: none;
+}
+:root{
+    --color__main: #36AFFF;
+    --color__sub: #36AFFF;
+}
+body{
+    height: 100vh;
+}
+#layout{
+    height: auto;
+    overflow: hidden;
+}
+
+/* 아이왑 로고 */
+.iwop *{
+    font-family: 'LEIXO';
+
+    color: white;
+
+    font-size: 2.5em;
+}
+.iwop--main *{
+    font-size: 10em;
+}
+.iwop{
+    display: flex;
+}
+
+/* 탑 바 */
+
+.topBar{
+    position: fixed;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    height: 70px;
+
+    background-color: var(--color__main)
+}
+.topBar__left{
+    margin-left: 5%;
+}
+.topBar__right{
+    margin-right: 5%;
+}
+
+.quickMenu{
+    display: flex;
+}
+.quickMenu__item{
+}
+.quickMenu__item__content{
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    margin: 0 10px;
+
+    font-size: 1.2em;
+    color: white;
+
+    transition: 0.5s;
+}
+.quickMenu__item__content:hover{
+    color: #FFFFFFAA
+}
+.quickMenu__item__content::before{
+    content: "";
+    margin-bottom: 6px;
+}
+.quickMenu__item__content::after{
+    content: "";
+    opacity: 0.4;
+    width: 0%;
+    height: 1px;
+    margin-top: 5px;
+    background-color: white;
+    transition: 0.5s;
+}
+.quickMenu__item:hover .quickMenu__item__content::after,.quickMenu__item.quickMenu__item--active .quickMenu__item__content::after{
+    width: 60%;
+}
+
+/* 시작 페이지 */
+
+.iwop__startPage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-color: var(--color__main);
+}
+.iwop__startPage__spelling{
+    color: white;
+    font-size: 1.5em;
+}
+.iwop__startPage__club{
+    margin-top: 60px;
+    color: white;
+    font-size: 1.8em;
+}

@@ -1,18 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
+
     <link rel="shortcut icon" href="./assets/iwop.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/font.css">
     <link rel="stylesheet" href="./css/index.css">
 
     <title>IWOP</title>
 </head>
-<body>
-    
+
+<body data-scrollbar>
+    <div class="topBar" style="display:none;">
+        <div class="topBar__left">
+            <div class="iwop">
+                <div class="iwop__i">I</div>
+                <div class="iwop__w">W</div>
+                <div class="iwop__o">O</div>
+                <div class="iwop__p">P</div>
+            </div>
+        </div>
+        <div class="topBar__right">
+            <ul class="quickMenu">
+                <li class="quickMenu__item quickMenu__item--active">
+                    <a class="quickMenu__item__content">소개</a>
+                </li>
+                <li class="quickMenu__item">
+                    <a class="quickMenu__item__content">커리큘럼</a>
+                </li>
+                <li class="quickMenu__item">
+                    <a class="quickMenu__item__content">수상실적</a>
+                </li>
+                <li class="quickMenu__item">
+                    <a class="quickMenu__item__content">작품</a>
+                </li>
+                <li class="quickMenu__item">
+                    <a class="quickMenu__item__content">QnA</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="layout">
+        <section class="iwop__startPage">
+            <div class="iwop iwop--main">
+                <div class="iwop__i">I</div>
+                <div class="iwop__w">W</div>
+                <div class="iwop__o">O</div>
+                <div class="iwop__p">P</div>
+            </div>
+            <p class="iwop__startPage__spelling">Internet World Operation People</p>
+            <p class="iwop__startPage__club">소프트웨어과 <strong>유일 웹 동아리</strong></p>
+        </section>
+    </div>
+    <script src="./js/smooth-scrollbar.js"></script>
+    <script>
+        Scrollbar.initAll();
+    </script>
 </body>
+
 </html>

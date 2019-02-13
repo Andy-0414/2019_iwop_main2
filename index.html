@@ -14,39 +14,10 @@
     <title>IWOP</title>
 </head>
 
-<body data-scrollbar>
-    <div class="topBar" style="display:none;">
-        <div class="topBar__left">
-            <div class="iwop">
-                <div class="iwop__i">I</div>
-                <div class="iwop__w">W</div>
-                <div class="iwop__o">O</div>
-                <div class="iwop__p">P</div>
-            </div>
-        </div>
-        <div class="topBar__right">
-            <ul class="quickMenu">
-                <li class="quickMenu__item quickMenu__item--active">
-                    <a class="quickMenu__item__content">소개</a>
-                </li>
-                <li class="quickMenu__item">
-                    <a class="quickMenu__item__content">커리큘럼</a>
-                </li>
-                <li class="quickMenu__item">
-                    <a class="quickMenu__item__content">수상실적</a>
-                </li>
-                <li class="quickMenu__item">
-                    <a class="quickMenu__item__content">작품</a>
-                </li>
-                <li class="quickMenu__item">
-                    <a class="quickMenu__item__content">QnA</a>
-                </li>
-            </ul>
-        </div>
-    </div>
+<body>
     <div id="layout">
         <section class="iwop__startPage">
-            <div class="iwop iwop--main">
+            <div class="iwop iwop__main iwop--active">
                 <div class="iwop__i">I</div>
                 <div class="iwop__w">W</div>
                 <div class="iwop__o">O</div>
@@ -55,11 +26,68 @@
             <p class="iwop__startPage__spelling">Internet World Operation People</p>
             <p class="iwop__startPage__club">소프트웨어과 <strong>유일 웹 동아리</strong></p>
         </section>
+
+        <header class="topBar topBar--detach">
+            <div class="topBar__left">
+                <div class="iwop iwop__sub iwop--disable">
+                    <div class="iwop__i">I</div>
+                    <div class="iwop__w">W</div>
+                    <div class="iwop__o">O</div>
+                    <div class="iwop__p">P</div>
+                </div>
+            </div>
+            <nav class="topBar__right">
+                <ul class="quickMenu">
+                    <li class="quickMenu__item quickMenu__item--active">
+                        <a class="quickMenu__item__content">소개</a>
+                    </li>
+                    <li class="quickMenu__item">
+                        <a class="quickMenu__item__content">커리큘럼</a>
+                    </li>
+                    <li class="quickMenu__item">
+                        <a class="quickMenu__item__content">수상실적</a>
+                    </li>
+                    <li class="quickMenu__item">
+                        <a class="quickMenu__item__content">작품</a>
+                    </li>
+                    <li class="quickMenu__item">
+                        <a class="quickMenu__item__content">QnA</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="iwop__curriculum">
+            <article class="iwop__curriculum__item">
+                <div class="timeline">
+                    <div class="timeline__circleLine"></div>
+                </div>
+                <div class="content">
+
+                </div>
+            </article>
+            <article class="iwop__curriculum__item">
+                <div class="timeline">
+                    <div class="timeline__circleLine"></div>
+                </div>
+                <div class="content">
+            
+                </div>
+            </article>
+            <article class="iwop__curriculum__item">
+                <div class="timeline">
+                    <div class="timeline__circleLine"></div>
+                </div>
+                <div class="content">
+            
+                </div>
+            </article>
+        </section>
     </div>
-    <script src="./js/smooth-scrollbar.js"></script>
-    <script>
-        Scrollbar.initAll();
-    </script>
+
+
+
+    <script src="./js/index.js"></script>
 </body>
 
 </html>

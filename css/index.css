@@ -15,35 +15,75 @@ ul,li{
 }
 :root{
     --color__main: #36AFFF;
-    --color__sub: #36AFFF;
+    --color__sub: #2EB6D4;
 }
 body{
-    height: 100vh;
 }
 #layout{
     height: auto;
     overflow: hidden;
 }
 
+::-webkit-scrollbar {
+    background: transparent;
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: rgba(0,0,0,.05);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--color__sub);
+}
+
+
 /* 아이왑 로고 */
 .iwop *{
+    transition: 0.5s;
+
     font-family: 'LEIXO';
 
     color: white;
 
     font-size: 2.5em;
 }
-.iwop--main *{
+.iwop__i{
+    transition-delay: 0
+}
+.iwop__w{
+    transition-delay: 0.1s
+}
+.iwop__o{
+    transition-delay: 0.2s
+}
+.iwop__p{
+    transition-delay: 0.3s
+}
+.iwop__main *{
     font-size: 10em;
+}
+
+.iwop--active * {
+    opacity: 1;
+    transform: translateY(0px);
+}
+.iwop--disable * {
+    opacity: 0;
+    transform: translateY(-100px);
 }
 .iwop{
     display: flex;
+}
+@keyframes waveText{
+    0%{ transform: translateY(0px);}
+    50%{ transform: translateY(-10px);}
+    100%{ transform: translateY(0px);}
 }
 
 /* 탑 바 */
 
 .topBar{
-    position: fixed;
+    /* position: fixed; */
 
     display: flex;
     justify-content: space-between;
@@ -52,12 +92,20 @@ body{
     width: 100%;
     height: 70px;
 
-    background-color: var(--color__main)
+    background-color: var(--color__main);
+
+    z-index: 100;
+}
+.topBar--attach{
+    position: fixed;
+    top: 0;
 }
 .topBar__left{
+    transition: 0.5s;
     margin-left: 5%;
 }
 .topBar__right{
+    transition: 0.5s;
     margin-right: 5%;
 }
 
@@ -121,4 +169,53 @@ body{
     margin-top: 60px;
     color: white;
     font-size: 1.8em;
+}
+
+/* 커리큘럼 */
+.iwop__curriculum{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.iwop__curriculum__item{
+    display: flex;
+    align-items: center;
+
+    width: 80%;
+    height: 400px;
+
+
+}
+.iwop__curriculum__item .timeline{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+.iwop__curriculum__item .timeline__circleLine{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 60px;
+    height: 60px;
+
+    background-color: var(--color__main);
+    border-radius: 60px;
+
+    z-index: 20;
+}
+.iwop__curriculum__item .timeline__circleLine::before{
+    content: "";
+    height: 400px;
+    width: 4px;
+
+    background-color: var(--color__main);
+
+    z-index: -10;
+}
+.iwop__curriculum__item .content{
+    flex: 4;
+    height: 300px;
+
+    box-shadow: 0px 0px 5px 0px #CCCCCC
 }

@@ -20,6 +20,8 @@ ul,li{
 body{
 }
 #layout{
+    /* background-color: #010D14;
+    color: white; */
     height: auto;
     overflow: hidden;
 }
@@ -40,10 +42,13 @@ body{
     color: #36afff;
     font-size: 2.4em;
     line-height: 2em;
+    text-align: center;
+    width: 100%;
 }
 .title--small{
+    width: 100%;
     color: #36afff;
-    font-size: 2em;
+    font-size: 1.8em;
     line-height: 2em;
 }
 .content--normal{
@@ -288,4 +293,23 @@ body{
 
     padding: 20px;
 
+}
+
+/* 수상실적 */
+
+/* 작품 */
+
+/* QnA */
+.iwop__qna{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.iwop__qna__item{
+    display: flex;
+    flex-direction: column;
+
+    margin: 20px 0;
+
+    width: 80%;
 }

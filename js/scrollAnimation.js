@@ -21,11 +21,11 @@ var scrollAnimation = scrollAnimation || {};
 
                     if (between(y, showHeightTop, showHeightBottem)){
                         x.style.opacity = 1;
-                        x.style.transform = "translateX(0px)"
+                        x.style.transform = "translateY(0px)"
                     }
                     else{
                         x.style.opacity = 0;
-                        x.style.transform = `translateX(${this.spawnHeight})`
+                        x.style.transform = `translateY(${this.spawnHeight})`
                     }
                 })
             })

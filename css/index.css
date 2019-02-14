@@ -33,12 +33,17 @@ body{
     background: rgba(0,0,0,.05);
 }
 ::-webkit-scrollbar-thumb {
-    background: var(--color__sub);
+    background: var(--color__main);
 }
 
 .title--normal{
     color: #36afff;
     font-size: 2.4em;
+    line-height: 2em;
+}
+.title--small{
+    color: #36afff;
+    font-size: 2em;
     line-height: 2em;
 }
 .content--normal{
@@ -173,6 +178,8 @@ body{
 /* 시작 페이지 */
 
 .iwop__startPage{
+    position: relative;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -191,6 +198,46 @@ body{
     margin-top: 60px;
     color: white;
     font-size: 1.8em;
+}
+.iwop__startPage__scroll{
+    position: absolute;
+    bottom: 2%;
+    
+    display: flex;
+    flex-direction: column;
+}
+.iwop__startPage__scroll__item{
+    opacity: 0.2;
+    color: white;
+    font-size: 4em;
+    line-height: 20px;
+    transition: 0.5s;
+}
+.iwop__startPage__scroll__item.iwop__startPage__scroll__item--disable{
+    opacity: 0;
+}
+.iwop__startPage__scroll__item.iwop__startPage__scroll__item--active:nth-child(1){
+    animation: mainScrollIcon 1s infinite;
+}
+.iwop__startPage__scroll__item.iwop__startPage__scroll__item--active:nth-child(2){
+    animation: mainScrollIcon 1s infinite;
+    animation-delay: 0.2s;
+}
+.iwop__startPage__scroll__item.iwop__startPage__scroll__item--active:nth-child(3){
+    animation: mainScrollIcon 1s infinite;
+    animation-delay: 0.4s;
+}
+
+@keyframes mainScrollIcon{
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(2px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
 }
 
 /* 커리큘럼 */
@@ -239,5 +286,6 @@ body{
     flex: 4;
     height: 300px;
 
-    box-shadow: 0px 0px 5px 0px #CCCCCC
+    padding: 20px;
+
 }

@@ -1,5 +1,9 @@
 // 스크롤 이벤트
-const between = (value,min,max)=> value >= min && value <= max
+const between = (value, min, max) => value >= min && value <= max
+const swapClass = (ele,on,off)=>{
+    ele.classList.toggle(on,true);
+    ele.classList.toggle(off,false);
+}
 var y = window.scrollY
 var user__maxY = window.innerHeight
 
@@ -7,25 +11,31 @@ var layout = document.querySelector('#layout')
 var topBar = document.querySelector('.topBar')
 var iwop__main = document.querySelector('.iwop.iwop__main')
 var iwop__sub = document.querySelector('.iwop.iwop__sub')
+var iwop__scroll = document.querySelectorAll('.iwop__startPage__scroll *')
 
 window.addEventListener('scroll',(e)=>{
     var y = window.scrollY
     //탑 바
-    console.log(iwop__main.offsetTop)
     if (!between(y, 0, iwop__main.scrollHeight)) {
-        iwop__main.className = "iwop iwop__main iwop--disable"
-        iwop__sub.className = "iwop iwop__sub iwop--active"
+        swapClass(iwop__main, 'iwop--disable', 'iwop--active')
+        swapClass(iwop__sub, 'iwop--active', 'iwop--disable')
+        iwop__scroll.forEach(x=>{
+            swapClass(x, 'iwop__startPage__scroll__item--disable', 'iwop__startPage__scroll__item--active')
+        })
     }
     else{
-        iwop__main.className = "iwop iwop__main iwop--active"
-        iwop__sub.className = "iwop iwop__sub iwop--disable"
+        swapClass(iwop__main, 'iwop--active', 'iwop--disable')
+        swapClass(iwop__sub, 'iwop--disable', 'iwop--active')
+        iwop__scroll.forEach(x => {
+            swapClass(x, 'iwop__startPage__scroll__item--active', 'iwop__startPage__scroll__item--disable')            
+        })
     }
     if (!between(y, 0, user__maxY)) {
-        topBar.classList = "topBar topBar--attach"
+        swapClass(topBar, 'topBar--attach', 'topBar--detach')
         layout.style.marginTop = "70px"
     }
     else{
-        topBar.classList = "topBar topBar--detach"
+        swapClass(topBar, 'topBar--detach', 'topBar--attach')
         layout.style.marginTop = "0px"
     }
 })

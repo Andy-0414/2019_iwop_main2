@@ -2,14 +2,12 @@ var scrollAnimation = scrollAnimation || {};
 
 (function () {
     const between = (value, min, max) => value >= min && value <= max
-    class scrollAnimationModule{
-        necessaryClassName = 'scrollAnimation'
-        necessaryElement = []
-        viewAccuracy = 0.95
-        spawnHeight = "-50px"
-        
+    class scrollAnimationModule{        
         constructor(){
+            this.necessaryClassName = 'scrollAnimation'
             this.necessaryElement = document.querySelectorAll(`.${this.necessaryClassName}`)
+            this.viewAccuracy = 0.95         
+            this.spawnHeight = "-50px"
         }
         init(){
             this.necessaryElement.forEach(x=>{

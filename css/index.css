@@ -176,7 +176,9 @@ body{
     align-items: center;
     flex-direction: column;
 
-    width: 100%;
+    margin: 0 auto;
+
+    width: 50%;
     height: 500px;
 }
 
@@ -269,8 +271,6 @@ body{
 
     margin:20px;
     padding: 40px; 
-
-    box-shadow: 0px 0px 10px 1px #EEEEEE;
 }
 .iwop__curriculum__item__icon{
     font-size: 3em;

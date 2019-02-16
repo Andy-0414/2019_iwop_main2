@@ -17,7 +17,7 @@ var scrollAnimation = scrollAnimation || {};
                 var y = window.scrollY
                 this.necessaryElement.forEach(x=>{
                     var showHeightTop = x.offsetTop / this.viewAccuracy - window.innerHeight
-                    var showHeightBottem = x.offsetTop * this.viewAccuracy
+                    var showHeightBottem = (x.offsetTop + x.clientHeight/4) * this.viewAccuracy
 
                     if (between(y, showHeightTop, showHeightBottem)){
                         x.style.opacity = 1;

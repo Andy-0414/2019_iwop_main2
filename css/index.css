@@ -251,48 +251,33 @@ body{
     align-items: center;
     flex-direction: column;
 }
+.iwop__curriculum__list{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    margin: 10px 0;
+}
 .iwop__curriculum__item{
     display: flex;
-    align-items: center;
 
-    width: 80%;
-    height: 400px;
+    flex-direction: column;
 
-
-}
-.iwop__curriculum__item .timeline{
     flex: 1;
-    display: flex;
-    justify-content: center;
+    min-width: 300px;
+
+    margin:20px;
+    padding: 40px; 
+
+    box-shadow: 0px 0px 10px 1px #EEEEEE;
 }
-.iwop__curriculum__item .timeline__circleLine{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    width: 60px;
-    height: 60px;
-
-    background-color: var(--color__main);
-    border-radius: 60px;
-
-    z-index: 20;
+.iwop__curriculum__item__icon{
+    font-size: 3em;
 }
-.iwop__curriculum__item .timeline__circleLine::before{
-    content: "";
-    height: 400px;
-    width: 4px;
-
-    background-color: var(--color__main);
-
-    z-index: -10;
-}
-.iwop__curriculum__item .content{
-    flex: 4;
-    height: 300px;
-
-    padding: 20px;
-
+.iwop__curriculum .content--normal{
+    line-height: 1.8em;
+    font-size: 1.2em;
 }
 
 /* 수상실적 */

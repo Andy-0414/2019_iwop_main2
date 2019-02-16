@@ -11,7 +11,12 @@ var scrollAnimation = scrollAnimation || {};
         }
         init(){
             this.necessaryElement.forEach(x=>{
-                x.style.transition = "0.5s"
+                var childIndex;
+                x.parentNode.childNodes.forEach((y,idx)=>{
+                    if(x == y) childIndex = idx-1
+                })
+                x.style.transition = `0.5s`
+                x.style.transitionDelay = `${0.1 * childIndex}s`
             })
             document.addEventListener('scroll',()=>{
                 var y = window.scrollY

@@ -38,8 +38,20 @@
     .iwop__history{
         width: 100%;
     }
+    .iwop__curriculum{
+        width: 100%;
+    }
+    .iwop__curriculum__list{
+        width: 100%;
+    }
     .iwop__curriculum__item{
+        width: 100%;
         min-width: 300px;
+
+        padding: 10px;
+    }
+    .iwop__awards__list{
+        width: 100%;
     }
     .iwop__qna__item{
         widows: 100%;

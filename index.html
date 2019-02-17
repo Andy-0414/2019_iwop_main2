@@ -19,7 +19,7 @@
 
 <body>
     <div id="layout">
-        <section class="iwop__startPage">
+        <header class="iwop__startPage">
             <div class="iwop iwop__main iwop--active" style="color:white">
                 <div class="iwop__i">I</div>
                 <div class="iwop__w">W</div>
@@ -36,59 +36,74 @@
                 <i
                     class="material-icons iwop__startPage__scroll__item iwop__startPage__scroll__item--active">expand_more</i>
             </div>
-        </section>
+        </header>
 
-        <header class="topBar topBar--detach">
+        <nav class="topBar topBar--detach">
             <div class="topBar__left">
-                <div class="iwop iwop__sub iwop--disable">
+                <div class="iwop iwop__sub iwop--disable" onclick="gotoStartPage()">
                     <div class="iwop__i">I</div>
                     <div class="iwop__w">W</div>
                     <div class="iwop__o">O</div>
                     <div class="iwop__p">P</div>
                 </div>
             </div>
-            <nav class="topBar__right">
+            <div class="topBar__right">
                 <ul class="quickMenu">
                     <li class="quickMenu__item quickMenu__item--active">
-                        <a class="quickMenu__item__content">소개</a>
+                        <a class="quickMenu__item__content" onclick="gotoScroll('iwop__history',this)">소개</a>
                     </li>
                     <li class="quickMenu__item">
-                        <a class="quickMenu__item__content">커리큘럼</a>
+                        <a class="quickMenu__item__content" onclick="gotoScroll('iwop__curriculum',this)">커리큘럼</a>
                     </li>
                     <li class="quickMenu__item">
-                        <a class="quickMenu__item__content">수상실적</a>
+                        <a class="quickMenu__item__content" onclick="gotoScroll('iwop__awards',this)">수상실적</a>
                     </li>
                     <li class="quickMenu__item">
-                        <a class="quickMenu__item__content">작품</a>
+                        <a class="quickMenu__item__content" onclick="gotoScroll('iwop__work',this)">작품</a>
                     </li>
                     <li class="quickMenu__item">
-                        <a class="quickMenu__item__content">QnA</a>
+                        <a class="quickMenu__item__content" onclick="gotoScroll('iwop__qna',this)">QnA</a>
                     </li>
                 </ul>
-            </nav>
-        </header>
+            </div>
+        </nav>
         <section class="iwop__history">
             <h2 class="title--normal scrollAnimation">소개</h2>
-            <p class="content--normal scrollAnimation" style="text-align:center;">오랜 역사를 자랑하고 있는소프트웨어과의 유일한 웹 개발 동아리,
-                IWOP은 웹 개발과 웹 디자인 그리고 교내대회 기획에 대해 배울 수 있습니다.</p>
+            <p class="content--normal scrollAnimation" style="text-align:center;">19년의 역사를 자랑하는 소프트웨어과 유일 웹동아리 IWOP이 올해 신입생을 대상으로 21기를 뽑습니다.
+            웹 클라이언트, 서버, 웹 게임 개발과 웹 디자인을 배울 수 있습니다!</p>
         </section>
         <section class="iwop__curriculum">
             <h2 class="title--normal scrollAnimation">커리큘럼</h2>
             <article class="iwop__curriculum__list">
                 <div class="iwop__curriculum__item scrollAnimation">
                     <i class="title--normal material-icons iwop__curriculum__item__icon">code</i>
-                    <h2 class="title--small">HTML</h2>
-                    <p class="content--normal">처음 IWOP에 들어오면 HTML5와 CSS3로 정적페이지를 만드는 법을 배웁니다.</p>
+                    <h2 class="title--small">1. FrontEnd Basic</h2>
+                    <p class="content--normal">처음 IWOP에 들어오면 HTML5와 CSS3로 정적페이지를 만들어봅니다.</p>
                 </div>
                 <div class="iwop__curriculum__item scrollAnimation">
-                    <i class="title--normal material-icons iwop__curriculum__item__icon">style</i>
-                    <h2 class="title--small">CSS</h2>
-                    <p class="content--normal">HTML과 CSS를 배우고나서 기능적인 부분을 넣기 위해서 Node.js를 이용한 서버를 만드는 방법을 배우게 됩니다.</p>
+                    <i class="title--normal material-icons iwop__curriculum__item__icon">description</i>
+                    <h2 class="title--small">2. Javascript</h2>
+                    <p class="content--normal">자바스크립트로 동적인 홈페이지를 제작해봅니다.</p>
                 </div>
                 <div class="iwop__curriculum__item scrollAnimation">
-                    <i class="title--normal material-icons iwop__curriculum__item__icon">all_inbox</i>
-                    <h2 class="title--small">JS</h2>
-                    <p class="content--normal">MariaDB를 사용하여 데이터를 저장하여 활용하는 서버를 만드는 법을 배웁니다.</p>
+                    <i class="title--normal material-icons iwop__curriculum__item__icon">http</i>
+                    <h2 class="title--small">3. Node.js</h2>
+                    <p class="content--normal">Node.js와 Express 프레임워크로 웹서버를 만들어봅니다.</p>
+                </div>
+                <div class="iwop__curriculum__item scrollAnimation">
+                    <i class="title--normal material-icons iwop__curriculum__item__icon">storage</i>
+                    <h2 class="title--small">4. Database</h2>
+                    <p class="content--normal">MongoDB, Socket.io, Passport로 다양한 서버를 제작해봅니다.</p>
+                </div>
+                <div class="iwop__curriculum__item scrollAnimation">
+                    <i class="title--normal material-icons iwop__curriculum__item__icon">view_compact</i>
+                    <h2 class="title--small">5. FrontEnd Advanced</h2>
+                    <p class="content--normal">Vue로 SPA를 만들어 실제로 배포해봅니다.</p>
+                </div>
+                <div class="iwop__curriculum__item scrollAnimation">
+                    <i class="title--normal material-icons iwop__curriculum__item__icon">videogame_asset</i>
+                    <h2 class="title--small">6. Web Game</h2>
+                    <p class="content--normal">Phaser.js로 웹게임을 개발하고 기획해봅니다.</p>
                 </div>
             </article>
         </section>
@@ -197,22 +212,26 @@
                 </div>
             </article>
         </section>
-        <!-- <section class="iwop__work">
+        <section class="iwop__work">
             <h2 class="title--normal">작품</h2>
-        </section> -->
+        </section>
         <section class="iwop__qna">
             <h2 class="title--normal scrollAnimation">QnA</h2>
             <article class="iwop__qna__item">
-                <div class="title--small scrollAnimation">Q. 아이왑 부장은 씹덕인가요?</div>
-                <p class="content--normal scrollAnimation">A. 아니요 정상인입니다</p>
+                <div class="title--small scrollAnimation">Q. 아이왑에 지원하려면 실력이 얼마나 좋아야 하나요?</div>
+                <p class="content--normal scrollAnimation">A. 완전 처음이여도 상관없습니다! 웹을 배우고자 하는 열정만 있으면 충분합니다!</p>
             </article>
             <article class="iwop__qna__item">
-                <div class="title--small scrollAnimation">Q. 아이왑 부장은 씹덕인가요?</div>
-                <p class="content--normal scrollAnimation">A. 아니요 정상인입니다</p>
+                <div class="title--small scrollAnimation">Q. 포트폴리오를 반드시 내야 하나요?</div>
+                <p class="content--normal scrollAnimation">A. 내든 안 내든 상관없으나 내면 좋습니다.</p>
             </article>
             <article class="iwop__qna__item">
-                <div class="title--small scrollAnimation">Q. 아이왑 부장은 씹덕인가요?</div>
-                <p class="content--normal scrollAnimation">A. 아니요 정상인입니다</p>
+                <div class="title--small scrollAnimation">Q. 지원 자격이 어떻게 되나요?</div>
+                <p class="content--normal scrollAnimation">A. 선린 1학년이면 어떤 과든 지원 가능합니다!</p>
+            </article>
+            <article class="iwop__qna__item">
+                <div class="title--small scrollAnimation">Q. .5기 뽑나요?</div>
+                <p class="content--normal scrollAnimation">A. 아쉽게도 지원을 받지 않습니다.</p>
             </article>
         </section>
         <footer class="iwop__footer">

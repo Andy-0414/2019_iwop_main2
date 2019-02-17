@@ -6,7 +6,7 @@ var scrollAnimation = scrollAnimation || {};
         constructor(){
             this.necessaryClassName = 'scrollAnimation'
             this.necessaryElement = document.querySelectorAll(`.${this.necessaryClassName}`)
-            this.viewAccuracy = 0.95         
+            this.viewAccuracy = 0.97         
             this.spawnHeight = "-50px"
         }
         init(){
@@ -16,13 +16,13 @@ var scrollAnimation = scrollAnimation || {};
                     if(x == y) childIndex = idx-1
                 })
                 x.style.transition = `0.5s`
-                x.style.transitionDelay = `${0.1 * childIndex}s`
+                x.style.transitionDelay = `${0.05 * childIndex}s`
             })
             document.addEventListener('scroll',()=>{
                 var y = window.scrollY
                 this.necessaryElement.forEach(x=>{
-                    var showHeightTop = (x.offsetTop + x.clientHeight / 4) / this.viewAccuracy - window.innerHeight
-                    var showHeightBottem = (x.offsetTop + x.clientHeight/4) * this.viewAccuracy
+                    var showHeightTop = (x.offsetTop + x.clientHeight / 2) / this.viewAccuracy - window.innerHeight
+                    var showHeightBottem = (x.offsetTop + x.clientHeight/2) * this.viewAccuracy
 
                     if (between(y, showHeightTop, showHeightBottem)){
                         x.style.opacity = 1;

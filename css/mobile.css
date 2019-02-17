@@ -14,7 +14,7 @@
         width: 200px;
         height: 200px;
 
-        background-color: #2EB6D4;
+        background-color: #36AFFF;
 
         transition: 0.5s;
         transform-origin: top right;
@@ -24,13 +24,9 @@
     }
     .quickMenu--active{
         display: flex;
-
-        transform: scale(1);
     }
     .quickMenu--disable{
-        transform: scale(0);
-
-        overflow: hidden;
+        display: none;
     }
     .iwop__startPage__spelling{
         text-align: center;

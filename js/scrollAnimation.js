@@ -6,7 +6,7 @@ var scrollAnimation = scrollAnimation || {};
         constructor(){
             this.necessaryClassName = 'scrollAnimation'
             this.necessaryElement = document.querySelectorAll(`.${this.necessaryClassName}`)
-            this.viewAccuracy = 0.97         
+            this.viewAccuracy = 0.97        
             this.spawnHeight = "-50px"
         }
         init(){

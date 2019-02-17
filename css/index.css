@@ -10,6 +10,8 @@
     font-size: 1em;
     letter-spacing: 1px;
 
+    scroll-behavior: smooth;
+
     user-select: none;
 }
 ul,li{
@@ -177,6 +179,15 @@ section{
 }
 .quickMenu__item:hover .quickMenu__item__content::after,.quickMenu__item.quickMenu__item--active .quickMenu__item__content::after{
     width: 60%;
+}
+
+.quickMenu__mobile{
+    cursor: pointer;
+    
+    display: none;
+
+    color: white;
+    font-size: 2.5em;
 }
 
 /* 소개 */

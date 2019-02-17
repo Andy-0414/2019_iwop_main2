@@ -14,11 +14,13 @@ var section = document.querySelectorAll('section')
 var iwop__main = document.querySelector('.iwop.iwop__main')
 var iwop__sub = document.querySelector('.iwop.iwop__sub')
 var iwop__scroll = document.querySelectorAll('.iwop__startPage__scroll *')
+var quickMenu = document.querySelector('.quickMenu')
 var quickMenu__item = document.querySelectorAll('.quickMenu__item')
 var quickMenu__item__content = document.querySelectorAll('.quickMenu__item__content')
 
 window.addEventListener('scroll', (e) => {
     var y = window.scrollY
+    console.log(user__maxY)
     //탑 바
     if (!between(y, 0, iwop__main.offsetTop)) {
         swapClass(iwop__main, 'iwop--disable', 'iwop--active')
@@ -40,6 +42,7 @@ window.addEventListener('scroll', (e) => {
     }
     else {
         swapClass(topBar, 'topBar--detach', 'topBar--attach')
+        swapClass(quickMenu, 'quickMenu--disable','quickMenu--active')
         layout.style.marginTop = "0px"
     }
     section.forEach((x, idx) => {
@@ -65,4 +68,8 @@ function quickMenuItemSelect(num) {
         if (num == idx) swapClass(x, 'quickMenu__item--active', 'quickMenu__item--disable')
         else swapClass(x, 'quickMenu__item--disable', 'quickMenu__item--active')
     })
+}
+function toggleQuickMenu(){
+    quickMenu.classList.toggle('quickMenu--disable')
+    quickMenu.classList.toggle('quickMenu--active')
 }

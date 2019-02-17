@@ -56,7 +56,7 @@ window.addEventListener('scroll', (e) => {
 function gotoStartPage() {
     window.scrollTo({ behavior: 'smooth', top: 0 });
 }
-function gotoScroll(className, thisElement) {
+function gotoScroll(className) {
     var ele = document.getElementsByClassName(className)[0]
     window.scrollTo({ behavior: 'smooth', top: ele.offsetTop - 70 })
 }

@@ -20,7 +20,6 @@ var quickMenu__item__content = document.querySelectorAll('.quickMenu__item__cont
 
 window.addEventListener('scroll', (e) => {
     var y = window.scrollY
-    console.log(user__maxY)
     //탑 바
     if (!between(y, 0, iwop__main.offsetTop)) {
         swapClass(iwop__main, 'iwop--disable', 'iwop--active')

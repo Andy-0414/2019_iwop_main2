@@ -1,3 +1,12 @@
+/*
+소프트웨어과 유일 웹 동아리 IWOP
+Chrome을 기준으로 작성됨. (ES6문법 배제 IE11,Edge 일부 호환)
+
+GitHub : https://github.com/IWOP/iwop.github.io , https://github.com/Andy-0414/IWOP
+
+© 2019. PJH. All rights reserved.
+*/
+
 // 스크롤 이벤트
 const between = function (value, min, max) { return value >= min && value <= max }
 const swapClass = function(ele, on, off){
@@ -85,4 +94,3 @@ var timer = setInterval(function(){
     var px = -400 * (slideIndex + 2)
     slider.style.marginLeft = px+"px"
 },3000)
-//margin - left: -400px;

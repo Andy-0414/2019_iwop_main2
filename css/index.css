@@ -426,9 +426,17 @@ section{
     background-color: #36AFFF;
 }
 .iwop__footer__left{
-    line-height: 2em;
+    text-align: left;
+}
+.iwop__footer__right{
+    text-align: right;
 }
 .iwop__footer__left,.iwop__footer__right{
+    line-height: 1.8em;
+
     font-size: 0.9em;
     margin: 0 5%;
+}
+.iwop__footer__link{
+    color: white;
 }

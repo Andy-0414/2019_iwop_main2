@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/mobile.css">
 
+
     <title>IWOP</title>
 </head>
 
@@ -273,13 +274,17 @@
             name = navigator.appName
         if (name === 'Microsoft Internet Explorer' || agent.indexOf('trident') != -1) { // IE
             if (name == 'Netscape' && agent.indexOf('trident') != -1) { // IE11
-
+                alert('인터넷 익스플로러 11에서는 일부 기능만 지원됩니다.')
             }
             else{ // IE<11
-
+                var layout = document.getElementById('layout')
+                document.body.removeChild(layout)
+                var noIE = document.createElement('div')
+                noIE.classList.add('noIE')
+                noIE.innerHTML = "IWOP 사이트는 익스플로러를 지원하지 않습니다.<br><a href='https://www.google.com/intl/ko_ALL/chrome/'>크롬 브라우저 다운로드</a>"
+                document.body.appendChild(noIE)
             }
         }
-        
         else { // Other
             var scrollScript = document.createElement('script')
             scrollScript.src = "./js/scrollAnimation.js"

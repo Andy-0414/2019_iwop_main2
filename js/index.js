@@ -19,7 +19,6 @@ var quickMenu__item = document.querySelectorAll('.quickMenu__item')
 var quickMenu__item__content = document.querySelectorAll('.quickMenu__item__content')
 window.onscroll = function(e){
     var y = window.scrollY || window.pageYOffset
-    console.log(y)
     //탑 바
     if (!between(y, 0, iwop__main.offsetTop)) {
         swapClass(iwop__main, 'iwop--disable', 'iwop--active')
@@ -76,3 +75,14 @@ function toggleQuickMenu() {
     quickMenu.classList.toggle('quickMenu--disable')
     quickMenu.classList.toggle('quickMenu--active')
 }
+
+// 슬라이더
+var slider = document.getElementsByClassName('iwop__work__list')[0]
+var sliderItem = slider.children
+var slideIndex = 0
+var timer = setInterval(function(){
+    slideIndex = (slideIndex+1)%5
+    var px = -400 * (slideIndex + 2)
+    slider.style.marginLeft = px+"px"
+},2000)
+//margin - left: -400px;

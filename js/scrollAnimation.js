@@ -1,44 +1,44 @@
 
-    var scrollAnimation = scrollAnimation || {};
+var scrollAnimation = scrollAnimation || {};
 
-    (function () {
-        const between = function (value, min, max) { return value >= min && value <= max }
-        class scrollAnimationModule {
-            constructor() {
-                this.necessaryClassName = 'scrollAnimation'
-                this.necessaryElement = document.querySelectorAll(`.${this.necessaryClassName}`)
-                this.viewAccuracy = 1
-                this.spawnHeight = "-50px"
-            }
-            init() {
-                this.necessaryElement.forEach(x => {
-                    var childIndex;
-                    x.parentNode.childNodes.forEach((y, idx) => {
-                        if (x == y) childIndex = idx - 1
-                    })
-                    x.style.transition = `0.5s`
-                    x.style.transitionDelay = `${0.05 * childIndex}s`
-                })
-                document.addEventListener('scroll', () => {
-                    var y = window.scrollY
-                    this.necessaryElement.forEach(x => {
-                        var showHeightTop = (x.offsetTop + x.clientHeight / 2) / this.viewAccuracy - window.innerHeight
-                        var showHeightBottem = (x.offsetTop + x.clientHeight / 2) * this.viewAccuracy
-
-                        if (between(y, showHeightTop, showHeightBottem)) {
-                            x.style.opacity = 1;
-                            x.style.transform = "translateY(0px)"
-                        }
-                        else {
-                            x.style.opacity = 0;
-                            x.style.transform = `translateY(${this.spawnHeight})`
-                        }
-                    })
-                })
-            }
+(function () {
+    const between = function (value, min, max) { return value >= min && value <= max }
+    class scrollAnimationModule {
+        constructor() {
+            this.necessaryClassName = 'scrollAnimation'
+            this.necessaryElement = document.querySelectorAll(`.${this.necessaryClassName}`)
+            this.viewAccuracy = 1
+            this.spawnHeight = "-50px"
         }
+        init() {
+            this.necessaryElement.forEach(x => {
+                var childIndex;
+                x.parentNode.childNodes.forEach((y, idx) => {
+                    if (x == y) childIndex = idx - 1
+                })
+                x.style.transition = `0.5s`
+                x.style.transitionDelay = `${0.05 * childIndex}s`
+            })
+            document.addEventListener('scroll', () => {
+                var y = window.scrollY
+                this.necessaryElement.forEach(x => {
+                    var showHeightTop = (x.offsetTop + x.clientHeight / 2) / this.viewAccuracy - window.innerHeight
+                    var showHeightBottem = (x.offsetTop + x.clientHeight / 2) * this.viewAccuracy
 
-        scrollAnimation = new scrollAnimationModule()
-    })();
+                    if (between(y, showHeightTop, showHeightBottem)) {
+                        x.style.opacity = 1;
+                        x.style.transform = "translateY(0px)"
+                    }
+                    else {
+                        x.style.opacity = 0;
+                        x.style.transform = `translateY(${this.spawnHeight})`
+                    }
+                })
+            })
+        }
+    }
 
-    scrollAnimation.init()
+    scrollAnimation = new scrollAnimationModule()
+})();
+
+scrollAnimation.init()

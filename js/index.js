@@ -84,5 +84,5 @@ var timer = setInterval(function(){
     slideIndex = (slideIndex+1)%5
     var px = -400 * (slideIndex + 2)
     slider.style.marginLeft = px+"px"
-},2000)
+},3000)
 //margin - left: -400px;

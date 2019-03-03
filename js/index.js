@@ -1,8 +1,8 @@
 // 스크롤 이벤트
-const between = (value, min, max) => value >= min && value <= max
-const swapClass = (ele, on, off) => {
-    ele.classList.toggle(on, true);
-    ele.classList.toggle(off, false);
+const between = function (value, min, max) { return value >= min && value <= max }
+const swapClass = function(ele, on, off){
+    ele.classList.add(on);
+    ele.classList.remove(off);
 }
 var y = window.scrollY
 var user__maxY = window.innerHeight
@@ -17,23 +17,25 @@ var iwop__scroll = document.querySelectorAll('.iwop__startPage__scroll *')
 var quickMenu = document.querySelector('.quickMenu')
 var quickMenu__item = document.querySelectorAll('.quickMenu__item')
 var quickMenu__item__content = document.querySelectorAll('.quickMenu__item__content')
-
-window.addEventListener('scroll', (e) => {
-    var y = window.scrollY
+window.onscroll = function(e){
+    var y = window.scrollY || window.pageYOffset
+    console.log(y)
     //탑 바
     if (!between(y, 0, iwop__main.offsetTop)) {
         swapClass(iwop__main, 'iwop--disable', 'iwop--active')
         swapClass(iwop__sub, 'iwop--active', 'iwop--disable')
-        iwop__scroll.forEach(x => {
+        for (let idx = 0; idx < iwop__scroll.length; idx++) {
+            const x = iwop__scroll[idx];
             swapClass(x, 'iwop__startPage__scroll__item--disable', 'iwop__startPage__scroll__item--active')
-        })
+        }
     }
     else {
         swapClass(iwop__main, 'iwop--active', 'iwop--disable')
         swapClass(iwop__sub, 'iwop--disable', 'iwop--active')
-        iwop__scroll.forEach(x => {
-            swapClass(x, 'iwop__startPage__scroll__item--active', 'iwop__startPage__scroll__item--disable')
-        })
+        for (let idx = 0; idx < iwop__scroll.length; idx++) {
+            const x = iwop__scroll[idx];
+            swapClass(x, 'iwop__startPage__scroll__item--active', 'iwop__startPage__scroll__item--disable')            
+        }
     }
     if (!between(y, 0, user__maxY)) {
         swapClass(topBar, 'topBar--attach', 'topBar--detach')
@@ -41,18 +43,19 @@ window.addEventListener('scroll', (e) => {
     }
     else {
         swapClass(topBar, 'topBar--detach', 'topBar--attach')
-        swapClass(quickMenu, 'quickMenu--disable','quickMenu--active')
+        swapClass(quickMenu, 'quickMenu--disable', 'quickMenu--active')
         layout.style.marginTop = "0px"
     }
-    section.forEach((x, idx) => {
+    for (let idx = 0; idx < section.length; idx++) {
+        const x = section[idx];
         var tmp = section[idx - 1] || { offsetTop: window.pageYOffset }
         if (tmp) {
             if (between(y, tmp.offsetTop, x.offsetTop)) {
                 quickMenuItemSelect(idx)
             }
         }
-    })
-})
+    }
+}
 
 // 퀵 메뉴
 function gotoStartPage() {
@@ -63,12 +66,13 @@ function gotoScroll(className) {
     window.scrollTo({ behavior: 'smooth', top: ele.offsetTop - 70 })
 }
 function quickMenuItemSelect(num) {
-    quickMenu__item.forEach((x, idx) => {
+    for (let idx = 0; idx < quickMenu__item.length; idx++) {
+        const x = quickMenu__item[idx];
         if (num == idx) swapClass(x, 'quickMenu__item--active', 'quickMenu__item--disable')
-        else swapClass(x, 'quickMenu__item--disable', 'quickMenu__item--active')
-    })
+        else swapClass(x, 'quickMenu__item--disable', 'quickMenu__item--active')   
+    }
 }
-function toggleQuickMenu(){
+function toggleQuickMenu() {
     quickMenu.classList.toggle('quickMenu--disable')
     quickMenu.classList.toggle('quickMenu--active')
 }

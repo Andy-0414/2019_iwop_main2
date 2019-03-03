@@ -1,8 +1,8 @@
 @font-face{
     font-family: 'NanumSquareR';
-    src: url('../assets/NanumSquareR.ttf') format('truetype');
+    src: url('../assets/NanumSquareR.ttf') format('opentype');
 }
 @font-face{
     font-family: 'LEIXO';
-    src: url('../assets/LEIXO.ttf') format('truetype');
+    src: url('../assets/LEIXO.ttf') format('opentype');
 }

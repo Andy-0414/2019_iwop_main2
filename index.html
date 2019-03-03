@@ -80,8 +80,10 @@
         </nav>
         <section class="iwop__history">
             <h2 class="title--normal scrollAnimation">소개</h2>
-            <p class="content--normal scrollAnimation" style="text-align:center;">19년의 역사를 자랑하는 소프트웨어과 유일 웹동아리 IWOP이 올해 신입생을 대상으로 21기를 뽑습니다.
-            웹 클라이언트, 서버, 웹 게임 개발과 웹 디자인을 배울 수 있습니다!</p>
+            <p class="content--normal scrollAnimation" style="text-align:center; width: 100%;">19년의 역사를 자랑하는 소프트웨어과 유일
+                웹동아리 IWOP이 올해
+                신입생을 대상으로 21기를 뽑습니다.
+                웹 클라이언트, 서버, 웹 게임 개발과 웹 디자인을 배울 수 있습니다!</p>
         </section>
         <section class="iwop__curriculum">
             <h2 class="title--normal scrollAnimation">커리큘럼</h2>
@@ -266,11 +268,26 @@
             </div>
         </footer>
     </div>
+    <script>
+        var agent = navigator.userAgent.toLowerCase(),
+            name = navigator.appName
+        if (name === 'Microsoft Internet Explorer' || agent.indexOf('trident') != -1) { // IE
+            if (name == 'Netscape' && agent.indexOf('trident') != -1) { // IE11
 
+            }
+            else{ // IE<11
 
-
+            }
+        }
+        
+        else { // Other
+            var scrollScript = document.createElement('script')
+            scrollScript.src = "./js/scrollAnimation.js"
+            document.body.appendChild(scrollScript)
+        }
+    </script>
     <script src="./js/index.js"></script>
-    <script src="./js/scrollAnimation.js"></script>
+
 </body>
 
 </html>
